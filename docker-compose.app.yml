@@ -1,0 +1,7 @@
+services:
+  config:
+    image: ${DOCKER_USERNAME}/socketing:config-server
+    container_name: config-server-app
+    ports:
+      - "9000:9000"
+
