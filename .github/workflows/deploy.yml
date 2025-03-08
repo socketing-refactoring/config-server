@@ -49,7 +49,7 @@ jobs:
         uses: appleboy/scp-action@master
         with:
           username: ${{ secrets.EC2_USER }}
-          host: ${{ secrets.ECE_HOST }}
+          host: ${{ secrets.EC2_HOST }}
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           source: ./docker-compose.app.yml
           target: /home/ubuntu/config-server/app
