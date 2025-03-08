@@ -32,3 +32,11 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.jar {
+	enabled = false
+}
+
+tasks.bootJar {
+	archiveFileName.set("config-service.jar")
+}

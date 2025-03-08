@@ -52,7 +52,7 @@ jobs:
           host: ${{ secrets.ECE_HOST }}
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           source: ./docker-compose.app.yml
-          target: /home/ubuntu/config-server/app/docker-compose.app.yml
+          target: /home/ubuntu/config-server/app
 
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
