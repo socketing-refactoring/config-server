@@ -50,7 +50,7 @@ jobs:
         run: |
           pwd
           echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ec2.pem
-          sudo chmod 644 ec2.pem
+          sudo chmod 600 ec2.pem
           ls -al
           mkdir -p ~/.ssh
           ssh-keyscan ${{ secrets.EC2_HOST}} >> ~/.ssh/known_hosts
