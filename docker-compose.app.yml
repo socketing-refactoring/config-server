@@ -4,4 +4,3 @@ services:
     container_name: config-server-app
     ports:
       - "9000:9000"
-

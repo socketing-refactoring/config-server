@@ -21,12 +21,19 @@ val springCloudVersion = "2024.0.0"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.cloud:spring-cloud-config-server")
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 	implementation(platform("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"))
+	implementation("io.micrometer:micrometer-registry-prometheus:1.15.0-M2")
+	compileOnly("org.projectlombok:lombok")
+	annotationProcessor("org.projectlombok:lombok")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	testCompileOnly("org.projectlombok:lombok")
+	testAnnotationProcessor("org.projectlombok:lombok")
 }
 
 tasks.withType<Test> {
@@ -38,5 +45,5 @@ tasks.jar {
 }
 
 tasks.bootJar {
-	archiveFileName.set("config-service.jar")
+	archiveFileName.set("config-server.jar")
 }
