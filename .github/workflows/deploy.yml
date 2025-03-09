@@ -47,7 +47,7 @@ jobs:
 
       - name: Copy docker-compose.yml to EC2
         run: |
-          echo ${{ secrets.EC2_SSH_PRIVATE_KEY }} > ~/ec2.pem
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ~/ec2.pem
           chmod 600 ~/ec2.pem
           scp -i ~/ec2.pem ./docker-compose.app.yml ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/home/ubuntu/config-server/app/docker-compose.app.yml
           rm -f ~/ec2.pem
