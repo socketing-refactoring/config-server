@@ -1,6 +1,7 @@
 services:
   config:
     image: ${DOCKER_USERNAME}/socketing:config-server
+    network_mode: host
     container_name: config-server-app
     ports:
       - "9000:9000"
